@@ -25,7 +25,8 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(path.join(__dirname, "..", "client", "build")));
+app.use(cors({ origin: "https://your-frontend.onrender.com" }));
+// app.use(express.static(path.join(__dirname, "..", "client", "build")));
 
 app.use("/api/user", authRoute);
 app.use(
@@ -34,9 +35,9 @@ app.use(
   courseRoute
 );
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
+// });
 
 app.listen(port, () => {
   console.log(`Server is running at Port ${port}...`);
