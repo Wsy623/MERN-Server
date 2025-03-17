@@ -25,7 +25,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(cors({ origin: "https://your-frontend.onrender.com" }));
+app.use(cors({ origin: "https://mern-client-yk8w.onrender.com" }));
 // app.use(express.static(path.join(__dirname, "..", "client", "build")));
 
 app.use("/api/user", authRoute);
